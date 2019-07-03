@@ -8,8 +8,7 @@
 #' @export
 run_model <- function(stack, formula, spde, likelihood="gaussian"){
     formula <- as.formula(formula)
-    print(formula)
-
+    
     result <-
         INLA::inla(formula,   
                 data=INLA::inla.stack.data(stack, spde=spde),

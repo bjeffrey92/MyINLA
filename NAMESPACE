@@ -2,4 +2,5 @@
 
 export(build_mesh_and_spde)
 export(build_stack_and_formula)
+export(plot_real_v_simulated)
 export(run_model)

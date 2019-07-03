@@ -18,6 +18,7 @@ build_mesh_and_spde <- function(Data, x_col, y_col, time_col, predict_forwards=N
 		mesh2d <- INLA::inla.mesh.2d(loc=locations_matrix, 
                     		cutoff = 0.2, min.angle=c(25,25),
 				max.edge=2) 
+		warning('Always inspect 2d mesh visually')
 	}
 
 	if (is.null(predict_forwards)){

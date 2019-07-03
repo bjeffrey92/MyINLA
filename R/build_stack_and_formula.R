@@ -76,6 +76,7 @@ build_stack_and_formula <- function(Data, x_col, y_col, time_col, response_col,
 
 	output_list <- list()
 	output_list[['stack']] <- stack
+	output_list[['stack.est']] <- stack.est
 	output_list[['formula_string']] <- formula
 	return(output_list)
 }
