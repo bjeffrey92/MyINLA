@@ -5,7 +5,7 @@
 \title{PLot real versus model simulated data}
 \usage{
 plot_real_v_simulated(result, stack.est, Data, response_col,
-  filename = NULL, return = FALSE)
+  filename = NULL)
 }
 \arguments{
 \item{result}{fitted inla model}
@@ -15,8 +15,6 @@ plot_real_v_simulated(result, stack.est, Data, response_col,
 \item{response_col}{name of column in data containing response data}
 
 \item{filename}{file for plot to be saved to, default FALSE}
-
-\item{return}{default if FALSE, if TRUE plot will be reurned}
 
 \item{stack}{data stack}
 }
