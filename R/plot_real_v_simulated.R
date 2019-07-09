@@ -11,7 +11,7 @@ plot_real_v_simulated <- function(result, stack.est, Data, response_col,
     if (!(is.null(filename))){
         png(filename)
     
-        INLA::inla.stack.index(stack.est,"est")$data
+        index <- INLA::inla.stack.index(stack.est,"est")$data
         lp <- result$summary.linear.predictor$mean[index]
         plot(lp[index],Data[[response_col]])
 

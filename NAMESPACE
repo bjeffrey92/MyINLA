@@ -2,6 +2,7 @@
 
 export(build_mesh_and_spde)
 export(build_stack_and_formula)
+export(create_validation_set)
 export(plot_real_v_simulated)
 export(run_model)
 export(validate_model_fit)

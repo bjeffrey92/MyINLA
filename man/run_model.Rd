@@ -12,8 +12,6 @@ run_model(stack, formula, spde, likelihood = "gaussian")
 \item{formula}{ar formula}
 
 \item{likelihood}{default gaussian}
-
-\item{covariate_cols}{vector containing name of all columns containing covariates}
 }
 \value{
 result of inla model

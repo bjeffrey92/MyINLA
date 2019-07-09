@@ -3,7 +3,6 @@
 #' @param stack Data stack 
 #' @param formula ar formula
 #' @param likelihood default gaussian
-#' @param covariate_cols vector containing name of all columns containing covariates
 #' @return result of inla model
 #' @export
 run_model <- function(stack, formula, spde, likelihood="gaussian"){

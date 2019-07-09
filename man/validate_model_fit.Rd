@@ -4,14 +4,25 @@
 \alias{validate_model_fit}
 \title{Computes multiple statistics describing the model fit}
 \usage{
-validate_model_fit(ValidationData, response_col, stack.est)
+validate_model_fit(result, Data, ValidationData, response_col, time_col,
+  location_col, stack.est, prediction_steps = 0)
 }
 \arguments{
+\item{result}{fitted inla model}
+
+\item{Data}{dataframe containing all variables and covariates and time and location of each observation}
+
 \item{ValidationData}{dataframe containing the validation data}
 
 \item{response_col}{names of response column}
 
+\item{time_col}{name of column containing time point of each observation}
+
+\item{location_col}{name of column containing location of each observation}
+
 \item{stack.est}{stack.est object}
+
+\item{prediction_steps}{how many steps ahead are being predicted, needed for generating naive forecast for comparison}
 }
 \description{
 Computes multiple statistics describing the model fit

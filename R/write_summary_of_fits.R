@@ -31,8 +31,9 @@ write_summary_of_fits <- function(all_data_files = NULL,
     all_rows <- list()
     pos <- 1
     for (item in all_model_fits){
-        result <- item[[1]] 
+        result <- item[[1]][['result']]
         filename <- item[[2]]
+        validation <- item[[1]][['validation']]
      
         for (row in 1:nrow(result$summary.fixed)){
             new_row <- c(row.names(result$summary.fixed)[[row]],
