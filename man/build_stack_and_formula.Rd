@@ -5,7 +5,8 @@
 \title{Build data stack and formula for AR model}
 \usage{
 build_stack_and_formula(Data, x_col, y_col, time_col, response_col, order,
-  covariate_cols, mesh2d, mesh1d)
+  covariate_cols, ValidationData = NULL, prediction_steps = 0, mesh2d,
+  mesh1d)
 }
 \arguments{
 \item{Data}{dataframe containing all variables and covariates and time and location of each observation}
@@ -21,6 +22,10 @@ build_stack_and_formula(Data, x_col, y_col, time_col, response_col, order,
 \item{order}{order of autoregressive model}
 
 \item{covariate_cols}{vector containing name of all columns containing covariates}
+
+\item{ValidationData}{dataframe containing the data for validating the predictions}
+
+\item{prediction_steps}{Number of steps ahead to be predicted, validation data must also be provided}
 
 \item{mesh2d}{2d mesh}
 
