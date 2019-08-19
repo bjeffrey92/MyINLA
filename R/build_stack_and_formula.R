@@ -17,7 +17,7 @@ build_stack_and_formula <- function(Data, x_col, y_col, time_col, response_col,
 									order, covariate_cols, ValidationData=NULL, 
 									prediction_steps=0, mesh2d, mesh1d){
 
-	if (prediction_steps == 0 & is.null(ValidationData)){
+	if (prediction_steps > 0 & is.null(ValidationData)){
 		stop('Please provide validation data if prediction_steps > 0')
 	}
 
