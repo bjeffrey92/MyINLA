@@ -145,9 +145,10 @@ build_stack_and_formula <- function(Data, x_col, y_col, time_col, response_col,
 
 		stack <- INLA::inla.stack(stack.est) #final stack
 
-		formula <- response ~ -1 + Intercept +
-					INLA::f(field, model=spde, group=field.group,
-						control.group=list(model="ar", order=order))
+		formula <- paste0('response ~ -1 + Intercept +
+						f(field, model=spde, group=field.group,
+						control.group=list(model="ar", order=', as.character(order)) 
+		formula <- paste0(formula, '))')
 	}
 
 	output_list <- list()

@@ -23,7 +23,7 @@ build_mesh_and_spde(Data, x_col, y_col, time_col,
 \item{one_dim}{build 1d mesh (TRUE/FALSE)}
 }
 \value{
-a list containing either the 1d mesh, 2d mesh or both
+a list containing either the 1d mesh, 2d mesh and SPDE or all three
 }
 \description{
 Build 1d and 2d mesh for INLA model

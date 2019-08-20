@@ -7,7 +7,7 @@
 #' @param predict_forwards number of time steps to predict forwards 
 #' @param two_dim build 2d mesh (TRUE/FALSE)
 #' @param one_dim build 1d mesh (TRUE/FALSE)
-#' @return a list containing either the 1d mesh, 2d mesh or both 
+#' @return a list containing either the 1d mesh, 2d mesh and SPDE or all three 
 #' @export
 build_mesh_and_spde <- function(Data, x_col, y_col, time_col, predict_forwards=NULL,
 		       two_dim=TRUE, one_dim=TRUE){
@@ -22,7 +22,7 @@ build_mesh_and_spde <- function(Data, x_col, y_col, time_col, predict_forwards=N
 	}
 
 	if (is.null(predict_forwards)){
-		predict_forwards <- length(unique(Data[[time_col]]))
+		predict_forwards <- 0
 	}else if (!is.null(predict_forwards) & !(one_dim)){
 		stop('Cannot make forward predictions without specifying 1d mesh.
 		     Set one_dim=TRUE')
