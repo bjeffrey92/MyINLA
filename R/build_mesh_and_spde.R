@@ -7,17 +7,21 @@
 #' @param predict_forwards number of time steps to predict forwards 
 #' @param two_dim build 2d mesh (TRUE/FALSE)
 #' @param one_dim build 1d mesh (TRUE/FALSE)
+#' @param cutoff value of cutoff to be passed to INLA::inla.mesh.2d, default = 0.2
+#' @param min.angle value of min.angle to be passed to INLA::inla.mesh.2d, default = c(25,25)
+#' @param max.edge value of max.edge to be passed to INLA::inla.mesh.2d, default = 2
 #' @return a list containing either the 1d mesh, 2d mesh and SPDE or all three 
 #' @export
 build_mesh_and_spde <- function(Data, x_col, y_col, time_col, predict_forwards=NULL,
-		       two_dim=TRUE, one_dim=TRUE){
-	
+		       two_dim=TRUE, one_dim=TRUE, cutoff = 0.2, min.angle = c(25,25), 
+			   max.edge = 2){
+
 	if (two_dim){
 		locations_matrix <- cbind(unique(Data[[x_col]]),
 					  unique(Data[[y_col]]))
 		mesh2d <- INLA::inla.mesh.2d(loc=locations_matrix, 
-                    		cutoff = 0.2, min.angle=c(25,25),
-				max.edge=2) 
+                    		cutoff=cutoff, min.angle=min.angle,
+				max.edge=max.edge) 
 		warning('Always inspect 2d mesh visually')
 	}
 

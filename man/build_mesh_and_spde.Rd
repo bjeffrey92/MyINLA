@@ -5,7 +5,8 @@
 \title{Build 1d and 2d mesh for INLA model}
 \usage{
 build_mesh_and_spde(Data, x_col, y_col, time_col,
-  predict_forwards = NULL, two_dim = TRUE, one_dim = TRUE)
+  predict_forwards = NULL, two_dim = TRUE, one_dim = TRUE,
+  cutoff = 0.2, min.angle = c(25, 25), max.edge = 2)
 }
 \arguments{
 \item{Data}{dataframe containing all variables and covariates and time and location of each observation}
@@ -21,6 +22,12 @@ build_mesh_and_spde(Data, x_col, y_col, time_col,
 \item{two_dim}{build 2d mesh (TRUE/FALSE)}
 
 \item{one_dim}{build 1d mesh (TRUE/FALSE)}
+
+\item{cutoff}{value of cutoff to be passed to INLA::inla.mesh.2d, default = 0.2}
+
+\item{min.angle}{value of min.angle to be passed to INLA::inla.mesh.2d, default = c(25,25)}
+
+\item{max.edge}{value of max.edge to be passed to INLA::inla.mesh.2d, default = 2}
 }
 \value{
 a list containing either the 1d mesh, 2d mesh and SPDE or all three
