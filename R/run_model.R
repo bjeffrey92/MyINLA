@@ -18,3 +18,15 @@ run_model <- function(stack, formula, spde, likelihood="gaussian"){
                 keep=FALSE, verbose=TRUE)
     return(result)
 }
+
+# coeff < -result$summary.fixed$mean
+# field <- result$summary.random$field$mean
+
+# prediction_table = matrix where each row is a time and location and columns are values of covariates
+
+# prediction_table%*%coeff + drop (A_est%*%field)
+
+# length(field)
+# mesh$n
+
+# result$summary.linear.predictor$mean[index]

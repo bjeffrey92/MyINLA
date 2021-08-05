@@ -39,8 +39,13 @@ build_stack_and_formula <- function(Data, x_col, y_col, time_col, response_col,
 							)
 
 		A.pred <-
-			INLA::inla.spde.make.A(mesh2d, group=ValidationData[[time_col]], 
-							group.mesh=mesh1d, index = 1:nrow(ValidationData))
+			INLA::inla.spde.make.A(mesh2d, 
+								group=ValidationData[[time_col]], 
+								loc=as.matrix(cbind(ValidationData[[x_col]],
+													ValidationData[[y_col]])),
+								group.mesh=mesh1d, 
+								index = 1:nrow(ValidationData)
+								)
 	}
 
 	field.indices <-
